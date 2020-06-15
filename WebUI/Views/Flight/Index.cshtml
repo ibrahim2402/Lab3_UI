@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebUI.Model.Flight>
+
+@{
+    ViewBag.Title = "Flight List";
+}
+
+<h2>List of Flights</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketPrice)
+        </td>
+       
+    </tr>
+}
+
+</table>
+<p style="margin-left: 2.5em;padding: 2em 5em 2em 2;border-width: 2px; border-color: black; border-style:solid; text-decoration-color:brown;">
+
+    @Html.ActionLink("Show Customers List", "Index", "Customer", new { style = "color:Red" })
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    @Html.ActionLink("Show Transaction List", "Index", "Transaction", new { style = "color:Red" })
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    @Html.ActionLink("Show Airline Trips List", "Index", "Airline", new { style = "color:Red" })
+
+
+</p>
